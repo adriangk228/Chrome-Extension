@@ -3,11 +3,23 @@
     "name": "stickies",
     "version": "1.0",
     "description:": "take notes on your browser pages",
+    "icons": {
+        "16": "/images/note16.png",
+        "48": "/images/note48.png",
+        "128": "/images/note128.png"
+    },
+    "page_action": {
+        "default_icon": {
+            "16": "/images/note16.png",
+            "48": "/images/note48.png",
+            "128": "/images/note128.png"
+        }
+    },
     "content_scripts": [
         {
-            "matches": ["https://*/*"], //"matches": ["<all_urls>"],
+            "matches": ["https://*/*"] //["https://www.google.com/*"] ["<all_urls>"],
+            "css": ["styles.css"],
             "js": ["/main.js"]
         }
     ]
 }
-
