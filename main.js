@@ -1,6 +1,6 @@
 //object class to hold each sticky note
     // container object for each webpage, property for URL
-    // propert containing an array of objects, each sticky note is one object
+    // property containing an array of objects, each sticky note is one object
     {
         "name": URL,
         "notes": [{

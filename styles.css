@@ -1,0 +1,33 @@
+body {
+    background: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c);
+}
+
+#notePad {
+    border: 5px solid black;
+    border-radius: 18px;
+    box-shadow: 3px 3px 30px black;
+    background-image: url("https://i.pinimg.com/600x315/14/f6/43/14f64328ffef40a0aa701f00779389d5.jpg");
+    background-size: cover;
+    padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    word-wrap: break-word;
+}
+
+#notePad::-webkit-scrollbar {
+    width: 12px;
+}
+
+#notePad::-webkit-scrollbar {
+    width: 12px;
+}
+ 
+#notePad::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    border-radius: 10px;
+}
+ 
+#notePad::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
