@@ -7,3 +7,4 @@ https://jainil-parikh.medium.com/build-your-custom-notes-chrome-extension-90ac61
 https://developer.mozilla.org/en-US/docs/Web/API/Element/contextmenu_event
 
 https://developer.mozilla.org/en-US/docs/Web/CSS/z-index
+

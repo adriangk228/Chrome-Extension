@@ -12,6 +12,13 @@ body {
     margin-left: auto;
     margin-right: auto;
     word-wrap: break-word;
+    height: 300px;
+    width: 300px;
+    font: 16px 'Georgia', Serif;
+    overflow: auto;
+    text-align: center;
+    padding-top: 15px;
+    white-space: pre-line;
 }
 
 #notePad::-webkit-scrollbar {

@@ -17,23 +17,7 @@
         "default_icon": "/images/note128.png",
         "default_popup": "popup.html",
         "default_title": "A popup will come here."
-      }
+      },
    
-    //   "permissions": [
-    //     "storage",
-    //     "tabs"
-    //   ],
-
-    // "icons": {
-    //     "16": "/images/note16.png",
-    //     "48": "/images/note48.png",
-    //     "128": "/images/note128.png"
-    // }
-    // "page_action": {
-    //     "default_icon": {
-    //         "16": "/images/note16.png",
-    //         "48": "/images/note48.png",
-    //         "128": "/images/note128.png"
-    //     }
-    // }
+      "permissions": ["storage", "tabs"]
 }
