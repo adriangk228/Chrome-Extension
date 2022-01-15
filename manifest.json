@@ -1,5 +1,5 @@
 {
-    "manifest_version": 2,
+    "manifest_version": 3,
     "name": "Stickies",
     "version": "1.0",
     "description": "take notes on your browser pages",
@@ -11,9 +11,9 @@
         }
     ],
     "background": {
-        "scripts": ["notepad.js"]
+        "service_worker": "notepad.js"
     },
-     "browser_action": {
+     "action": {
         "default_icon": "/images/note128.png",
         "default_popup": "popup.html",
         "default_title": "A popup will come here."

@@ -1,19 +1,31 @@
-let pageURL;
-chrome.tabs.query({ active: true, currentWindow: true }, function(tabs){pageURL = tabs[0].url});
+// let pageURL;
+// chrome.tabs.query({ active: true, currentWindow: true }, function(tabs){pageURL = tabs[0].url});
 
 // let pageNotes;
 // chrome.storage.sync.get({[pageURL]: ''}, function(notes) {
 //   pageNotes = Object.values(notes);
 // })
 
-let pageNotes;
-chrome.storage.local.get([pageURL] = '', function(notes) {
-  pageNotes = Object.values(notes);
-})
+// let pageNotes;
+// chrome.storage.local.get([pageURL] = '', function(notes) {
+//   pageNotes = Object.values(notes);
+// })
 
 class Notepad {
 
     constructor() {
+
+        let pageURL;
+        chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) { pageURL = tabs[0].url });
+        this.pageURL = pageURL;
+
+        let pageNotes;
+        chrome.storage.sync.get({ [pageURL]: '' }, function (notes) {
+            pageNotes = Object.values(notes);
+        })
+
+        this.pageNotes = pageNotes;
+
         const body = document.querySelector('body');
         const notePad = document.createElement("div");
         notePad.className = "notePad";
@@ -40,13 +52,14 @@ class Notepad {
     }
 
     addNote(str) {
-        pageNotes = [].concat(pageNotes, str);
+        let pageNotes = [].concat(this.pageNotes, str);
+        let pageURL = this.pageURL;
         const updated = {};
         updated[pageURL] = pageNotes;
-        chrome.storage.local.set(updated, function() {
+        chrome.storage.sync.set(updated, function() {
             console.log("Note added")
         })
-        localStorage.setItem(pageURL, pageNotes);
+        // localStorage.setItem(pageURL, pageNotes);
         const newNote = document.createTextNode(str + "\n\n");
         document.getElementById("noteContainer").appendChild(newNote);
     }

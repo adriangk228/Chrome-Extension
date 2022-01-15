@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', () => {
   const notePad = new Notepad();
   const textBox = document.getElementById('textBox');
