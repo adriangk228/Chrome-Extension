@@ -21,6 +21,11 @@ body {
     white-space: pre-line;
 }
 
+#noteContainer {
+    height: 300px;
+    width: 300px;
+}
+
 #notePad::-webkit-scrollbar {
     width: 12px;
 }
@@ -37,7 +42,7 @@ body {
 #notePad::-webkit-scrollbar-thumb {
     border-radius: 10px;
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
-} */
+}
 
 /*/new div element sticky
 //appends to surface (invisible div element covering page)
@@ -61,4 +66,3 @@ body {
     opacity: .3 ;
     text-align: justify;
 }
-
