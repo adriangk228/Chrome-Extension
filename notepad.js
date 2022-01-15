@@ -1,4 +1,11 @@
+chrome.runtime.onInstalled.addListener(() => {
+    chrome.storage.sync.set({ savedNotes: {} });
+});
+
 // let pageURL;
+
+
+
 // chrome.tabs.query({ active: true, currentWindow: true }, function(tabs){pageURL = tabs[0].url});
 
 // let pageNotes;
@@ -11,20 +18,28 @@
 //   pageNotes = Object.values(notes);
 // })
 
+async function getCurrentTab() {
+    let queryOptions = { active: true, currentWindow: true };
+    let [tab] = await chrome.tabs.query(queryOptions);
+    return tab;
+  }
+
+
+
 class Notepad {
 
     constructor() {
 
-        let pageURL;
-        chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) { pageURL = tabs[0].url });
-        this.pageURL = pageURL;
+        let cache, address;
 
-        let pageNotes;
-        chrome.storage.sync.get({ [pageURL]: '' }, function (notes) {
-            pageNotes = Object.values(notes);
+        getCurrentTab().then(tab => {
+            address = tab.url;
+            chrome.storage.sync.get(savedNotes, function(result) {
+                cache = result[savedNotes]
+            })
         })
 
-        this.pageNotes = pageNotes;
+        this.notes = cache[address] || [];
 
         const body = document.querySelector('body');
         const notePad = document.createElement("div");
@@ -34,9 +49,8 @@ class Notepad {
         noteContainer.id = "noteContainer";
         notePad.appendChild(noteContainer);
     
-        let text = pageNotes || '';
-        Array.isArray(text) ? text.forEach(x => noteContainer.appendChild(document.createTextNode(x))) 
-        : noteContainer.appendChild(document.createTextNode(text));
+        let text = [...this.notes];
+        text.forEach(x => noteContainer.appendChild(document.createTextNode(x)));
 
         let textBox = document.createElement("input");
         textBox.setAttribute("type", "text");
@@ -52,14 +66,9 @@ class Notepad {
     }
 
     addNote(str) {
-        let pageNotes = [].concat(this.pageNotes, str);
-        let pageURL = this.pageURL;
-        const updated = {};
-        updated[pageURL] = pageNotes;
-        chrome.storage.sync.set(updated, function() {
-            console.log("Note added")
-        })
-        // localStorage.setItem(pageURL, pageNotes);
+
+        chrome.storage.sync.set()
+
         const newNote = document.createTextNode(str + "\n\n");
         document.getElementById("noteContainer").appendChild(newNote);
     }

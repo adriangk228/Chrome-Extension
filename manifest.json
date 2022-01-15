@@ -19,5 +19,5 @@
         "default_title": "A popup will come here."
       },
    
-      "permissions": ["activeTab", "storage"]
+      "permissions": ["activeTab", "storage", "tabs"]
 }
