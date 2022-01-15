@@ -30,4 +30,28 @@ body {
 #notePad::-webkit-scrollbar-thumb {
     border-radius: 10px;
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+} */
+
+/*/new div element sticky
+//appends to surface (invisible div element covering page)
+//properties:
+    //size
+    //opacity
+    //bg color
+    //text: blank by default, can be accessed and updated by user
+    //creation_date
+    //webpage
+    //coordinate spot on page where note was creation_date
+    //categories?? tags???
+    */
+
+/* #sticky {
+    background: #fdffae;
+    height: 300px;
+    width: 300px;
+    border: 1px black solid;
+    position: relative;
+    opacity: .3 ;
+    text-align: justify;
 }
+

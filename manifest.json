@@ -1,25 +1,39 @@
 {
-    "manifest_version": 3,
-    "name": "stickies",
+    "manifest_version": 2,
+    "name": "Stickies",
     "version": "1.0",
-    "description:": "take notes on your browser pages",
-    "icons": {
-        "16": "/images/note16.png",
-        "48": "/images/note48.png",
-        "128": "/images/note128.png"
-    },
-    "page_action": {
-        "default_icon": {
-            "16": "/images/note16.png",
-            "48": "/images/note48.png",
-            "128": "/images/note128.png"
-        }
-    },
+    "description": "take notes on your browser pages",
     "content_scripts": [
         {
-            "matches": ["https://*/*"] //["https://www.google.com/*"] ["<all_urls>"],
-            "css": ["styles.css"],
-            "js": ["/main.js"]
+            
+            "matches": ["<all_urls>"], // ["https://*/*"]
+            "js": ["content.js"]
         }
-    ]
+    ],
+    "background": {
+        "scripts": ["background.js"]
+    },
+     "browser_action": {
+        "default_icon": "/images/note128.png",
+        "default_popup": "popup.html",
+        "default_title": "A popup will come here."
+      }
+   
+    //   "permissions": [
+    //     "storage",
+    //     "tabs"
+    //   ],
+
+    // "icons": {
+    //     "16": "/images/note16.png",
+    //     "48": "/images/note48.png",
+    //     "128": "/images/note128.png"
+    // }
+    // "page_action": {
+    //     "default_icon": {
+    //         "16": "/images/note16.png",
+    //         "48": "/images/note48.png",
+    //         "128": "/images/note128.png"
+    //     }
+    // }
 }
