@@ -12,41 +12,14 @@
     <div id="notePad" style="height:300px; width:300px; font:16px 'Georgia', Serif; overflow:auto;">
     </div>
 
-    <div style="text-align: center; padding-top: 15px">
-        <form action="#" onkeydown="button.click()">
+    <div style="text-align: center; padding-top: 15px"> 
+       <form action="#" onkeydown="button.click()"> 
           <input type="text" id="textBox">
           <button id="button">Submit</button>
         </form>
     </div>
 
+    <script src="/content.js"></script>   
 </body>
-
-<script src="./main.js"></script>  
-
-<script>
-    let textBox = document.getElementById('textBox');
-    let button = document.getElementById('button');
-    let notePad = document.getElementById('notePad');
-
-    textBox.addEventListener("keydown", function(event) {
-    if (event.key === "Enter" && textBox.value) {
-      inputText(textBox.value);
-      chatBox.scroll(0, chatBox.scrollHeight);
-    }
-  })
-
-  button.addEventListener("mousedown", function() {
-    if ('mousedown' && textBox.value) {
-      inputText(textBox.value);
-      chatBox.scroll(0, chatBox.scrollHeight);
-    }
-  })
-
-  function inputText(input) {
-    notePad.innerText += `${input}\n\n`;
-    textBox.value = '';
-  }
-
-</script>
 
 </html> 
